@@ -15,8 +15,9 @@ m3.unshift(12);
 console.log('Valores de m3: ' + m3);
 console.log('Posição do valor 100 no vetor: ' + m3.indexOf(100));
 console.log('Verificar se o número 120 exite no vetor: ' + m3.includes(120));
-//Imprimir todos os itens de um array
-//Soma dos itens dentro do array
+
+//Reduce
+//Imprimir todos os itens de um array.Soma dos itens dentro do array
 var sum = 0;
 for (let i = 0; i < m3.length; i++) {
     console.log('Resultado: ' + i);
@@ -24,7 +25,6 @@ for (let i = 0; i < m3.length; i++) {
 }
 console.log('Soma de todos os valores do array m3: ' + sum)
 
-//Reduce
 let total = m3.reduce((sum, m3) => sum + m3, 0)
 console.log('REDUCE: ' + total)
 
@@ -38,5 +38,20 @@ console.log('REDUCE: ' + total)
 // }
 // console.log(evenScores)
 var scores = [12, 13, 14, 16]
-let newArrayFilter = scores.filter(score=>score%2==0)
+let newArrayFilter = scores.filter(filtraArray=>filtraArray%2==0)//Create new array with even numbers os scores array [12,14,16]
 console.log('Filter: ' + newArrayFilter)
+
+//Map
+let newArrayMap = newArrayFilter.map(multiplicaArray=>multiplicaArray*3)//Cria um novo array multiplicando os valores 12,14,16 por 3. [36,52,48]
+console.log('Map: ' + newArrayMap)
+//Soma os valore criados pelo Map [36,42,48]
+let valorTotalSomadoComReduce = newArrayMap.reduce((somaValores,newArrayMap)=>somaValores + newArrayMap,0)
+console.log('Valor total somado com reduce: ' + valorTotalSomadoComReduce)
+
+//Encadeando o filter, map e reduce
+var scores1 = [12, 13, 14, 16]
+let filterMapReduce = scores1.filter(filtraArray=>filtraArray%2==0).map(multiplicaArray=>multiplicaArray*3).reduce((somaValores,newArrayMap)=>somaValores + newArrayMap,0)
+console.log('Filter Map e Reduce: ' +filterMapReduce)
+
+
+
