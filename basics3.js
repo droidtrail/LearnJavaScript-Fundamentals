@@ -19,8 +19,24 @@ console.log('Verificar se o número 120 exite no vetor: ' + m3.includes(120));
 //Soma dos itens dentro do array
 var sum = 0;
 for (let i = 0; i < m3.length; i++) {
-    console.log('Resultado: '+ i);
+    console.log('Resultado: ' + i);
     sum = sum + m3[i];//12+20+40+35+14+37+100
 }
 console.log('Soma de todos os valores do array m3: ' + sum)
 
+//Reduce
+let total = m3.reduce((sum, m3) => sum + m3, 0)
+console.log('REDUCE: ' + total)
+
+//Filter
+// var scores = [12, 13, 14, 16]
+// var evenScores = []
+// for (let i = 0; i < scores.length; i++) {
+//     if(scores[i] %2 == 0){//Create new array with even numbers os scores array [12,14,16]
+//         evenScores.push(scores[i])
+//     }
+// }
+// console.log(evenScores)
+var scores = [12, 13, 14, 16]
+let newArrayFilter = scores.filter(score=>score%2==0)
+console.log('Filter: ' + newArrayFilter)
